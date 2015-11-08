@@ -7,7 +7,7 @@
     "start": "SET DEBUG=server:* & nodemon app.js",
     "test": "mocha -u bdd -R spec"
   },
-  "author": "",
+  "author": "ravend6@gmail.com",
   "license": "ISC",
   "dependencies": {
     "chalk": "^1.1.1",

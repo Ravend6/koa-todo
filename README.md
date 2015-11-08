@@ -1,4 +1,4 @@
-# Simle TODO app
+# Simple TODO app
 ## Features:
 - koa
 - mongoose
