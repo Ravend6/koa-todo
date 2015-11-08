@@ -1,0 +1,17 @@
+{% extends "../layouts/main.html" %}
+
+{% block title %}List Users{% endblock %}
+
+{% block content %}
+  <h1>List Users</h1>
+  {% for user in users %}
+    <article>
+      <h3>
+        <a href="{{ router.users.url('show', user.id) }}">Id: {{ user.id }},
+        Username: {{ user.username }}, Password: {{ user.password }}</a>
+        <a href="/#" class="users-delete" data-id="{{ user.id }}" data-csrf="{{ csrfToken }}">Удалить</a>
+      </h3>
+    </article>
+  {% endfor %}
+  {% include '../_partials/notify.html' %}
+{% endblock %}

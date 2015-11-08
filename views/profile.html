@@ -1,0 +1,10 @@
+{% extends "layouts/main.html" %}
+
+{% block title %}Profile{% endblock %}
+
+{% block content %}
+  <h1 class="page-header">{{ user.displayName }} profile</h1>
+  <p>Ваш токен: <code id="token"></code></p>
+  <p><button class="btn btn-default" id="load-token" data-token="{{ user.token }}"
+  >Получить токен</button></p>
+{% endblock %}

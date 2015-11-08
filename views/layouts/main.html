@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+  <meta name="robots" content="all">
+  <title>Koa | {% block title %}Home{% endblock %}</title>
+  <link rel="stylesheet" href="/bower/bootstrap/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/bower/animate.css/animate.min.css">
+  <link rel="stylesheet" href="/bower/components-font-awesome/css/font-awesome.min.css">
+  <link rel="stylesheet" href="/styles/app.css">
+</head>
+<body>
+  <div class="container">
+    <nav>
+      <ul>
+        <li><a href="{{ router.index.url('index') }}">Home</a></li>
+        {% if isGuest %}
+          <li><a href="{{ router.auth.url('login') }}">Login</a></li>
+          <li><a href="{{ router.auth.url('register') }}">Register</a></li>
+        {% else %}
+          <li><a href="{{ router.index.url('profile') }}">Profile</a></li>
+          <li><a href="{{ router.auth.url('logout') }}">Logout</a></li>
+        {% endif %}
+        <li><a href="{{ router.todos.url('index') }}">Todos</a></li>
+        <li><a href="{{ router.todos.url('new') }}">Create Todo</a></li>
+      </ul>
+    </nav>
+  </div>
+  <div class="container">
+    {% block content %}
+      <h1>Main</h1>
+    {% endblock %}
+    {% include '../_partials/notify.html' %}
+  </div>
+  <script src="/bower/jquery/dist/jquery.min.js"></script>
+  <script src="/bower/bootstrap/dist/js/bootstrap.min.js"></script>
+  <script src="/bower/remarkable-bootstrap-notify/dist/bootstrap-notify.min.js"></script>
+  <script src="/bower/socket.io-client/socket.io.js"></script>
+  <script src="/scripts/lib/notify.js"></script>
+  <script src="/scripts/lib/pagination.js"></script>
+  <script src="/scripts/components/users.js"></script>
+  <script src="/scripts/components/todos.js"></script>
+</body>
+</html>

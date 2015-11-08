@@ -1,0 +1,17 @@
+{% extends "../layouts/main.html" %}
+
+{% block title %}Edit {{ todo.title }}{% endblock %}
+
+{% block content %}
+  <h1>Edit {{ todo.title }}</h1>
+  {% set buttonName = 'Edit' %}
+  {% set buttonClass = 'primary' %}
+  {% set _method = 'put' %}
+  {% include "./_form.html" %}
+  <form class="action" action="{{ router.todos.url('delete', todo.id) }}" method="post">
+    <input type="hidden" name="_method" value="delete">
+    <input type="hidden" name="_csrf" value="{{ csrfToken }}">
+    <button class="btn btn-danger"
+    onclick="return confirm('Вы точно хотите удалить?');">Delete</button>
+  </form>
+{% endblock %}

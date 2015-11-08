@@ -1,0 +1,31 @@
+{% extends "../layouts/main.html" %}
+
+{% block title %}List Todos{% endblock %}
+
+{% block content %}
+  <h1 class="page-header">List Todos</h1>
+  {% if isGuest %}
+    <div class="alert alert-dismissible alert-warning">
+      <button type="button" class="close" data-dismiss="alert">x</button>
+      <h4>Информация!</h4>
+      <p>Создовать новые тодо могуть только зарегистрированые пользователи, <a href="{{ router.auth.url('register') }}" class="alert-link">зарегистрироватся</a> или <a href="{{ router.auth.url('login') }}" class="alert-link">войти из соцсетей</a>.</p>
+    </div>
+  {% endif %}
+  <div id="todos-list">
+    {% for todo in todos %}
+      <article>
+        <h2><a href="{{ router.todos.url('show', todo.id) }}">
+          <span {% if todo.done %}class="todo-done"{% endif %}>{{ todo.title }}</span>
+        </a></h2>
+        <p>Aвтор {{ todo.userId.displayName }} </p>
+        <p>Создано {{ todo.createdAt | timeAgo }}</p>
+        {% if todo.updatedAt %}
+          <p>Обновлено {{ todo.updatedAt | timeAgo }}</p>
+        {% endif %}
+      </article>
+    {% else %}
+      <h2>Записей еще нет</h2>
+    {% endfor %}
+  </div>
+  {{ pagination | paginator | safe }}
+{% endblock %}

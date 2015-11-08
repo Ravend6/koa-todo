@@ -1,0 +1,10 @@
+{% extends "../layouts/main.html" %}
+
+{% block title %}New Todo{% endblock %}
+
+{% block content %}
+  <h1 class="page-header">New Todo</h1>
+  {% set buttonName = 'Create' %}
+  {% set buttonClass = 'success' %}
+  {% include "./_form.html" %}
+{% endblock %}

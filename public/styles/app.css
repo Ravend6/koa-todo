@@ -1,0 +1,148 @@
+/*Notify*/
+#flash-notify {
+  display: none;
+}
+
+.todo-done {
+  text-decoration: line-through;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+form.action {
+  display: inline;
+}
+
+.socket-todo {
+  background: #F9DB71
+}
+
+/*Login form*/
+.form-signin,
+.social-buttons {
+  max-width: 330px;
+  padding: 15px;
+  margin: 0 auto;
+}
+
+.form-signin .form-signin-heading,
+.form-signin .checkbox {
+  margin-bottom: 10px;
+}
+
+.form-signin .checkbox {
+  font-weight: normal;
+}
+
+.form-signin .form-control {
+  position: relative;
+  height: auto;
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 10px;
+  font-size: 16px;
+}
+
+.form-signin .form-control:focus {
+  z-index: 2;
+}
+
+.form-signin input[type="email"] {
+  /*margin-bottom: -1px;*/
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+.form-signin input[type="password"] {
+  /*margin-bottom: 10px;*/
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+
+.signup-or-separator {
+  position: relative;
+  height: 34px;
+  text-align: center;
+  background: none;
+}
+
+.signup-or-separator .text {
+  display: inline-block;
+  padding: 10px;
+  margin: 0;
+  background-color: #fff;
+}
+
+.signup-or-separator hr {
+  width: 90%;
+  margin: -16px auto 10px auto;
+  border-top: 1px solid #dce0e0;
+}
+
+.text-muted {
+  color: #777;
+  margin-top: 20px;
+}
+
+/*Socila Buttons*/
+.social-buttons {
+  padding-top: 0;
+}
+.social-buttons a:hover {
+  text-decoration: none;
+}
+
+.btn-facebook {
+  color: #fff;
+  background-color: #3b5998;
+  border: 1px solid #335190;
+  margin-bottom: 7px;
+}
+
+.btn-facebook:hover,
+.btn-facebook:focus {
+  color: #fff;
+  background-color: #294786;
+}
+
+.btn-google-plus {
+  color: #fff;
+  background-color: #dd4b39;
+  border: 1px solid #d54331;
+  margin-bottom: 7px;
+}
+
+.btn-google-plus:hover,
+.btn-google-plus:focus {
+  color: #fff;
+  background-color: #cb3927;
+}
+
+.btn-steam {
+  color: #fff;
+  background-color: #444;
+  border: 1px solid #3b3b3b;
+  margin-bottom: 7px;
+}
+
+.btn-steam:hover,
+.btn-steam:focus {
+  color: #fff;
+  background-color: #303030;
+}
+
+.btn-vk {
+  color: #fff;
+  background-color: #56789c;
+  border: 1px solid #4c7196;
+  margin-bottom: 7px;
+}
+
+.btn-vk:hover,
+.btn-vk:focus {
+  color: #fff;
+  background-color: #3b6084;
+}

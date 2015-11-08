@@ -1,0 +1,48 @@
+{% extends "../layouts/main.html" %}
+
+{% block title %}Вход{% endblock %}
+
+{% block content %}
+  <form class="form-signin" method="post">
+    <h2 class="form-signin-heading page-header text-center">Вход</h2>
+    <input type="hidden" name="_csrf" value="{{csrfToken}}">
+    <div class="form-group">
+      <label for="email" class="sr-only">Email address</label>
+      <div class="input-group">
+        <span class="input-group-addon"><i class="fa fa-envelope-o"></i></span>
+        <input type="email" id="email" class="form-control" placeholder="Email адрес" name="email" required autofocus>
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="password" class="sr-only">Password</label>
+      <div class="input-group">
+        <span class="input-group-addon"><i class="fa fa-key"></i></span>
+        <input type="password" id="password" class="form-control" placeholder="Пароль" name="password" required>
+      </div>
+    </div>
+    <div class="checkbox">
+      <label>
+        <input type="checkbox" name="rememberMe"> Запомнить меня
+      </label>
+    </div>
+    <button class="btn btn-md btn-success btn-block" type="submit">Войти</button>
+    <p class="text-center text-muted">
+      <small>Не зарегистрировались? <a href="{{ router.auth.url('register') }}">Зарегистрироваться</a></small>
+    </p>
+    <div class="signup-or-separator">
+      <h6 class="text">или</h6>
+      <hr>
+    </div>
+  </form>
+  <div class="social-buttons">
+    <a href="{{ router.auth.url('facebook') }}"><button class="btn btn-md btn-facebook btn-block">
+    <i class="fa fa-facebook"></i> Войти через Facebook</button></a>
+    <a href="{{ router.auth.url('steam') }}"><button class="btn btn-md btn-steam btn-block">
+    <i class="fa fa-steam"></i> Войти через Steam</button></a>
+    <a href="{{ router.auth.url('google') }}"><button class="btn btn-md btn-google-plus btn-block">
+    <i class="fa fa-google"></i> Войти через Google</button></a>
+    <a href="{{ router.auth.url('vkontakte') }}"><button class="btn btn-md btn-vk btn-block">
+    <i class="fa fa-vk"></i> Войти через Vk</button></a>
+  </div>
+{% endblock %}
+

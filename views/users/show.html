@@ -1,0 +1,16 @@
+{% extends "../layouts/main.html" %}
+
+{% block title %}{{ user.username }}{% endblock %}
+
+{% block content %}
+  <h1>{{ user.username }}</h1>
+  <p>Password: {{ user.password }}</p>
+  <a href="{{ router.users.url('edit', user.id) }}">Edit</a>
+  <form action="{{ router.users.url('delete', user.id) }}" method="post">
+    <input type="hidden" name="_method" value="delete">
+    <input type="hidden" name="_csrf" value="{{ csrfToken }}">
+    <button onclick="return confirm('Вы точно хотите удалить?');">Delete</button>
+  </form>
+  <a class="btn btn-warning" href="{{ back }}">Back</a>
+  {% include '../_partials/notify.html' %}
+{% endblock %}

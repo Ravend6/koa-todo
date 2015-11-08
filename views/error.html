@@ -1,0 +1,10 @@
+{% extends "layouts/main.html" %}
+
+{% block title %}Ошибка {{ code }}. {{ message }}{% endblock %}
+
+{% block content %}
+  <h1>Ошибка {{ code }}. {{ message }}</h1>
+  {% if stack %}
+    <pre>{{stack}}</pre>
+  {% endif %}
+{% endblock %}

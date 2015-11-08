@@ -1,0 +1,16 @@
+{% extends "../layouts/main.html" %}
+
+{% block title %}{{ todo.title }}{% endblock %}
+
+{% block content %}
+  <h1 class="page-header"><span {% if todo.done %}class="todo-done"{% endif %}>
+  {{ todo.title }}</span></h1>
+  <a class="btn btn-primary todo-action" href="{{ router.todos.url('edit', todo.id) }}">Edit</a>
+  <form class="action" action="{{ router.todos.url('delete', todo.id) }}" method="post">
+    <input type="hidden" name="_method" value="delete">
+    <input type="hidden" name="_csrf" value="{{ csrfToken }}">
+    <button class="btn btn-danger"
+    onclick="return confirm('Вы точно хотите удалить?');">Delete</button>
+  </form>
+  <a class="btn btn-warning" href="{{ back }}">Back</a>
+{% endblock %}

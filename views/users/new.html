@@ -1,0 +1,13 @@
+{% extends "../layouts/main.html" %}
+
+{% block title %}New User{% endblock %}
+
+{% block content %}
+  <h1 class="page-header">New User</h1>
+
+  {% set buttonName = 'Create' %}
+  {% set buttonClass = 'success' %}
+  {% include "./_form.html" %}
+
+  {% include '../_partials/notify.html' %}
+{% endblock %}
