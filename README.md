@@ -3,7 +3,7 @@
 - koa
 - mongoose
 - koa-mongoose
-- local and socila auth
+- local and social auth
 - jwt tokens generations
 - koa-router
 - template nunjucks
